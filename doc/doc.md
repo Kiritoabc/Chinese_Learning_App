@@ -26,7 +26,7 @@
 
 - id(唯一标识)
 - name(视频名称)
-- icon(视频图标)
+- icon_uri(视频图标)
 - uri(视频的url路径)
 - group:(视频所属分组)
 - type:(类型)
@@ -72,7 +72,7 @@
 
 
 
-表:comment(品论)
+表:comment(品论)暂无要求
 
 字段:
 

@@ -1,0 +1,11 @@
+
+# zap logger 的配置
+zap:
+  level: info
+  format: console
+  prefix: "[Chinese_Learning_App]"
+  director: log
+  show-line: true
+  encode-level: LowercaseColorLevelEncoder
+  stacktrace-key: stacktrace
+  log-in-console: true
