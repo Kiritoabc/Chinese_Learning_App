@@ -20,7 +20,7 @@
 
 数据库设计:Chinese_Learning_DB
 
-表:teaching_video(中文教学视频）
+表:teaching_videos(中文教学视频）
 
 字段：
 
@@ -31,7 +31,7 @@
 - group:(视频所属分组)
 - type:(类型)
 
-表:cultural_exchange_video
+表:cultural_exchange_videos
 
 字段:
 
@@ -44,7 +44,7 @@
 
 
 
-表:video_group(视频)
+表:video_groups(视频)
 
 - type(类型)
 - 
@@ -59,7 +59,7 @@
 
 
 
-表:admin(管理员)
+表:admins(管理员)
 
 字段:
 
@@ -72,7 +72,7 @@
 
 
 
-表:comment(品论)暂无要求
+表:comments(品论)暂无要求
 
 字段:
 
