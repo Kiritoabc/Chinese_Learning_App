@@ -1,0 +1,11 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "暂无",
+        "title": "swagger API",
+        "contact": {},
+        "version": "1.1.1"
+    },
+    "basePath": "/",
+    "paths": {}
+}
