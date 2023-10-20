@@ -48,3 +48,13 @@ mysql:
   max-open-conns: 100
   log-mode: ""
   log-zap: false
+
+
+# MinIo的配置
+minio:
+  endpoint: localhost:9001           # minio 的url
+  accessKey: minio                              # userName
+  secretKey: minio@123456                       # password
+  bucketName: test
+  region: us-east-1
+  useSSL: false

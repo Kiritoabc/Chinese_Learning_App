@@ -3,6 +3,7 @@ package system
 import (
 	"Chinese_Learning_App/global"
 	"Chinese_Learning_App/model/system"
+	"Chinese_Learning_App/utils"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
@@ -30,4 +31,8 @@ func (s *SysTeachingVideoApi) AddTeachingVideoApi(ctx *gin.Context) {
 	}
 	println(videoIcon, teachingVideo)
 	global.CLA_LOG.Info(video.Filename)
+	err := utils.UploadToMinio(videoIcon.Filename, videoIcon, "application/octet-stream")
+	if err != nil {
+		return
+	}
 }

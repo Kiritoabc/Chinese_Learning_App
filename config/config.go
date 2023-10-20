@@ -7,4 +7,5 @@ type Config struct {
 	// gorm
 	Mysql  Mysql           `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
 	DBList []SpecializedDB `mapstructure:"db-list" json:"db-list" yaml:"db-list"`
+	Minio  Minio           `mapstructure:"minio" json:"minio" yaml:"minio"`
 }
