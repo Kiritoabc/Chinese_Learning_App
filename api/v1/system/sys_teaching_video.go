@@ -4,6 +4,7 @@ import (
 	"Chinese_Learning_App/global"
 	"Chinese_Learning_App/model/system"
 	"Chinese_Learning_App/utils"
+	"os"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
@@ -31,7 +32,21 @@ func (s *SysTeachingVideoApi) AddTeachingVideoApi(ctx *gin.Context) {
 	}
 	println(videoIcon, teachingVideo)
 	global.CLA_LOG.Info(video.Filename)
-	err := utils.UploadToMinio(videoIcon.Filename, videoIcon, "application/octet-stream")
+	err := utils.UploadToMinio("test", videoIcon.Filename, videoIcon, "application/octet-stream")
+	path := "./video/" + video.Filename
+	err = ctx.SaveUploadedFile(video, path)
+	if err != nil {
+		return
+	}
+	// 上传视频
+	err = utils.UploadVideoToMinio(path, "test", teachingVideo.VideoName+video.Filename, global.CLA_Minio_Client)
+	if err != nil {
+		return
+	}
+	err = os.Remove(path)
+	if err != nil {
+		return
+	}
 	if err != nil {
 		return
 	}
