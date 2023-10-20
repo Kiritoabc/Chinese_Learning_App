@@ -44,6 +44,7 @@ func Routers() *gin.Engine {
 		PrivateGroup.GET("/hello", func(c *gin.Context) {
 			c.JSON(http.StatusOK, "hello world")
 		})
+		systemRouter.InitTeachingVideoRouter(PrivateGroup) // 注册上传视频的api路由
 	}
 	global.CLA_LOG.Info("router register success")
 	return Router

@@ -4,5 +4,13 @@ info:
   description: 暂无
   title: swagger API
   version: 1.1.1
-paths: {}
+paths:
+  /teachingVideo/upload:
+    post:
+      responses:
+        "200":
+          description: 新增成功
+      summary: 新增SysTeachingVideo
+      tags:
+      - AddTeachingVideoApi
 swagger: "2.0"

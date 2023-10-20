@@ -2,6 +2,7 @@ package initialize
 
 import (
 	"Chinese_Learning_App/global"
+	"Chinese_Learning_App/model/system"
 	"os"
 
 	"go.uber.org/zap"
@@ -32,26 +33,27 @@ func Gorm() *gorm.DB {
 func RegisterTables() {
 	db := global.GVA_DB
 	err := db.AutoMigrate(
-	// 系统模块表
-	//system.SysApi{},
-	//system.SysUser{},
-	//system.SysBaseMenu{},
-	//system.JwtBlacklist{},
-	//system.SysAuthority{},
-	//system.SysDictionary{},
-	//system.SysOperationRecord{},
-	//system.SysAutoCodeHistory{},
-	//system.SysDictionaryDetail{},
-	//system.SysBaseMenuParameter{},
-	//system.SysBaseMenuBtn{},
-	//system.SysAuthorityBtn{},
-	//system.SysAutoCode{},
-	//system.SysChatGptOption{},
-	//
-	//example.ExaFile{},
-	//example.ExaCustomer{},
-	//example.ExaFileChunk{},
-	//example.ExaFileUploadAndDownload{},
+		// 系统模块表
+		system.SysTeachingVideo{},
+		//system.SysApi{},
+		//system.SysUser{},
+		//system.SysBaseMenu{},
+		//system.JwtBlacklist{},
+		//system.SysAuthority{},
+		//system.SysDictionary{},
+		//system.SysOperationRecord{},
+		//system.SysAutoCodeHistory{},
+		//system.SysDictionaryDetail{},
+		//system.SysBaseMenuParameter{},
+		//system.SysBaseMenuBtn{},
+		//system.SysAuthorityBtn{},
+		//system.SysAutoCode{},
+		//system.SysChatGptOption{},
+		//
+		//example.ExaFile{},
+		//example.ExaCustomer{},
+		//example.ExaFileChunk{},
+		//example.ExaFileUploadAndDownload{},
 	)
 	if err != nil {
 		global.CLA_LOG.Error("register table failed", zap.Error(err))

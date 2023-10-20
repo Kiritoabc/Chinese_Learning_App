@@ -14,7 +14,21 @@ const docTemplate = `{
     },
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
-    "paths": {}
+    "paths": {
+        "/teachingVideo/upload": {
+            "post": {
+                "tags": [
+                    "AddTeachingVideoApi"
+                ],
+                "summary": "新增SysTeachingVideo",
+                "responses": {
+                    "200": {
+                        "description": "新增成功"
+                    }
+                }
+            }
+        }
+    }
 }`
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
