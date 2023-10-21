@@ -2,11 +2,14 @@ package system
 
 import (
 	"Chinese_Learning_App/global"
+	"Chinese_Learning_App/model/common/request"
 	"Chinese_Learning_App/model/common/response"
 	"Chinese_Learning_App/model/system"
 	"Chinese_Learning_App/utils"
 	"os"
 	"strconv"
+
+	"go.uber.org/zap"
 
 	"github.com/gin-gonic/gin"
 )
@@ -37,7 +40,6 @@ func (s *SysTeachingVideoApi) AddTeachingVideoApi(ctx *gin.Context) {
 		response.FailWithMessage("保存视频失败", ctx)
 		return
 	}
-
 	// 上传到minio
 	iconUrl, err := utils.UploadToMinio("test", teachingVideo.VideoName+videoIcon.Filename, videoIcon, "application/octet-stream")
 	if err != nil {
@@ -60,4 +62,35 @@ func (s *SysTeachingVideoApi) AddTeachingVideoApi(ctx *gin.Context) {
 	}
 
 	response.OkWithMessage("上传视频成功", ctx)
+}
+
+// SearchTeachingVideoList
+// @Tags SysTeachingVideo
+// @Summary 查询视频
+func (s *SysTeachingVideoApi) SearchTeachingVideoList(ctx *gin.Context) {
+	var pageInfo request.PageInfo
+	err := ctx.ShouldBindJSON(&pageInfo)
+	if err != nil {
+		response.FailWithMessage(err.Error(), ctx)
+		return
+	}
+	// 参数验证
+	err = utils.Verify(pageInfo, utils.PageInfoVerify)
+	if err != nil {
+		response.FailWithMessage(err.Error(), ctx)
+	}
+
+	teachingVideoList, total, err := sysTeachingVideoService.GetTeachingVideoList(pageInfo)
+	if err != nil {
+		global.CLA_LOG.Error("获取失败", zap.Error(err))
+		response.FailWithMessage("获取失败", ctx)
+		return
+	}
+
+	response.OkWithDetailed(response.PageResult{
+		List:     teachingVideoList,
+		Total:    total,
+		Page:     pageInfo.Page,
+		PageSize: pageInfo.PageSize,
+	}, "获取成功", ctx)
 }

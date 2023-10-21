@@ -14,6 +14,7 @@ func (t *TeachingVideoRouter) InitTeachingVideoRouter(Router *gin.RouterGroup) {
 
 	teachingVideoRouterApi := v1.ApiGroupApp.SystemApiGroup.SysTeachingVideoApi
 	{
-		teachingVideoRouter.POST("/upload", teachingVideoRouterApi.AddTeachingVideoApi) //	上传视频Api
+		teachingVideoRouter.POST("/upload", teachingVideoRouterApi.AddTeachingVideoApi)                   //	上传视频Api
+		teachingVideoRouter.POST("/getTeachingVideoList", teachingVideoRouterApi.SearchTeachingVideoList) // 获取教学list的Api
 	}
 }
