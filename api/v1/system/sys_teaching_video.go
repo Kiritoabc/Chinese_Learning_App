@@ -66,6 +66,7 @@ func (s *SysTeachingVideoApi) AddTeachingVideoApi(ctx *gin.Context) {
 
 // SearchTeachingVideoList
 // @Tags SysTeachingVideo
+// @router /teachingVideo/getTeachingVideoList [post]
 // @Summary 查询视频
 func (s *SysTeachingVideoApi) SearchTeachingVideoList(ctx *gin.Context) {
 	var pageInfo request.PageInfo

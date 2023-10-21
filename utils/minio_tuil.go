@@ -55,7 +55,7 @@ func UploadToMinio(bucketName, objectName string, file *multipart.FileHeader, co
 // error：上传过程中发生的错误。如果上传成功，则返回nil。
 // 示例：
 func UploadVideoToMinio(filePath, bucketName, objectName string, minioClient *minio.Client) (uri string, err error) {
-	_, err = minioClient.FPutObject(context.Background(), bucketName, objectName, filePath, minio.PutObjectOptions{ContentType: "video/map4"})
+	_, err = minioClient.FPutObject(context.Background(), bucketName, objectName, filePath, minio.PutObjectOptions{ContentType: "video/mp4"})
 	if err != nil {
 		// 处理创建客户端时发生的错误
 		global.CLA_LOG.Error(err.Error())
