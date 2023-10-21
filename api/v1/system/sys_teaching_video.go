@@ -2,6 +2,7 @@ package system
 
 import (
 	"Chinese_Learning_App/global"
+	"Chinese_Learning_App/model/common/response"
 	"Chinese_Learning_App/model/system"
 	"Chinese_Learning_App/utils"
 	"os"
@@ -30,24 +31,33 @@ func (s *SysTeachingVideoApi) AddTeachingVideoApi(ctx *gin.Context) {
 		Group:     group,
 		Type:      videoType,
 	}
-	println(videoIcon, teachingVideo)
-	global.CLA_LOG.Info(video.Filename)
-	err := utils.UploadToMinio("test", videoIcon.Filename, videoIcon, "application/octet-stream")
 	path := "./video/" + video.Filename
-	err = ctx.SaveUploadedFile(video, path)
+	err := ctx.SaveUploadedFile(video, path)
+	if err != nil {
+		response.FailWithMessage("保存视频失败", ctx)
+		return
+	}
+
+	// 上传到minio
+	iconUrl, err := utils.UploadToMinio("test", teachingVideo.VideoName+videoIcon.Filename, videoIcon, "application/octet-stream")
 	if err != nil {
 		return
 	}
-	// 上传视频
-	err = utils.UploadVideoToMinio(path, "test", teachingVideo.VideoName+video.Filename, global.CLA_Minio_Client)
+	videoUrl, err := utils.UploadVideoToMinio(path, "test", teachingVideo.VideoName+video.Filename, global.CLA_Minio_Client)
+	teachingVideo.VideoIconUrl = iconUrl
+	teachingVideo.VideoUrl = videoUrl
+
+	// 调用 sysTeachingVideoService 保存到数据库
+	err = sysTeachingVideoService.AddTeachingVideo(teachingVideo)
 	if err != nil {
+		response.FailWithMessage("上传视频失败", ctx)
 		return
 	}
 	err = os.Remove(path)
 	if err != nil {
+		response.FailWithMessage("上传有问题", ctx)
 		return
 	}
-	if err != nil {
-		return
-	}
+
+	response.OkWithMessage("上传视频成功", ctx)
 }
