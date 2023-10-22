@@ -11,7 +11,7 @@ type TeachingVideoService struct {
 
 // AddTeachingVideo
 // 添加教学视频
-func (t *TeachingVideoService) AddTeachingVideo(teachingVideo *system.SysTeachingVideo) error {
+func (t *TeachingVideoService) AddTeachingVideo(teachingVideo system.SysTeachingVideo) error {
 
 	// gorm 保存到数据库
 	global.CLA_DB.Save(&teachingVideo)

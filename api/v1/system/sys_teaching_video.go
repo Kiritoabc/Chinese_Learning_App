@@ -50,7 +50,7 @@ func (s *SysTeachingVideoApi) AddTeachingVideoApi(ctx *gin.Context) {
 	teachingVideo.VideoUrl = videoUrl
 
 	// 调用 sysTeachingVideoService 保存到数据库
-	err = sysTeachingVideoService.AddTeachingVideo(teachingVideo)
+	err = sysTeachingVideoService.AddTeachingVideo(*teachingVideo)
 	if err != nil {
 		response.FailWithMessage("上传视频失败", ctx)
 		return

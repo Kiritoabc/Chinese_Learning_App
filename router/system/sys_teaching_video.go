@@ -9,7 +9,7 @@ import (
 type TeachingVideoRouter struct {
 }
 
-func (t *TeachingVideoRouter) InitTeachingVideoRouter(Router *gin.RouterGroup) {
+func (s *TeachingVideoRouter) InitTeachingVideoRouter(Router *gin.RouterGroup) {
 	teachingVideoRouter := Router.Group("teachingVideo")
 
 	teachingVideoRouterApi := v1.ApiGroupApp.SystemApiGroup.SysTeachingVideoApi

@@ -38,13 +38,13 @@ func Routers() *gin.Engine {
 		systemRouter.InitBaseRouter(PublicGroup) // 注册基础功能路由 不做鉴权
 		systemRouter.InitInitRouter(PublicGroup) // 自动初始化相关
 	}
-	//
 	PrivateGroup := Router.Group(global.CLA_CONFIG.System.RouterPrefix)
 	{
 		PrivateGroup.GET("/hello", func(c *gin.Context) {
 			c.JSON(http.StatusOK, "hello world")
 		})
 		systemRouter.InitTeachingVideoRouter(PrivateGroup) // 注册上传视频的api路由
+		systemRouter.InitUserRouter(PrivateGroup)          // 用户路由注册
 	}
 	global.CLA_LOG.Info("router register success")
 	return Router
