@@ -15,6 +15,15 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/teachingVideo/getTeachingVideoList": {
+            "post": {
+                "tags": [
+                    "SysTeachingVideo"
+                ],
+                "summary": "查询视频",
+                "responses": {}
+            }
+        },
         "/teachingVideo/upload": {
             "post": {
                 "tags": [

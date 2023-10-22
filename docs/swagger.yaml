@@ -5,6 +5,12 @@ info:
   title: swagger API
   version: 1.1.1
 paths:
+  /teachingVideo/getTeachingVideoList:
+    post:
+      responses: {}
+      summary: 查询视频
+      tags:
+      - SysTeachingVideo
   /teachingVideo/upload:
     post:
       responses:
