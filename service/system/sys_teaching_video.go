@@ -34,3 +34,19 @@ func (t *TeachingVideoService) GetTeachingVideoList(info request.PageInfo) (list
 	}
 	return teachingVideo, total, err
 }
+
+func (t *TeachingVideoService) SearchAllParentVideoList() (list []system.SysTeachingVideo, err error) {
+	db := global.CLA_DB.Model(&system.SysTeachingVideo{})
+	// 查询所有的第一集的信息
+	err = db.Where("episode = ?", "0").Find(&list).Error
+	return
+}
+
+func (t *TeachingVideoService) SearchAllSonVideoList(ParentId int) (list []system.SysTeachingVideo, total int64, err error) {
+	db := global.CLA_DB.Model(&system.SysTeachingVideo{})
+	if err = db.Where("parent_id = ?", ParentId).Find(&list).Count(&total).Error; total == 0 || err != nil {
+		return
+	}
+
+	return list, total, err
+}

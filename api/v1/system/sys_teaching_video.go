@@ -5,6 +5,7 @@ import (
 	"Chinese_Learning_App/model/common/request"
 	"Chinese_Learning_App/model/common/response"
 	"Chinese_Learning_App/model/system"
+	sysRes "Chinese_Learning_App/model/system/response"
 	"Chinese_Learning_App/utils"
 	"os"
 	"strconv"
@@ -66,9 +67,9 @@ func (s *SysTeachingVideoApi) AddTeachingVideoApi(ctx *gin.Context) {
 }
 
 // SearchTeachingVideoList
-// @Tags SysTeachingVideo
+// @Tags SearchTeachingVideoList
 // @router /teachingVideo/getTeachingVideoList [post]
-// @Summary 查询视频
+// @Summary 查询视频？好像没用了哦
 func (s *SysTeachingVideoApi) SearchTeachingVideoList(ctx *gin.Context) {
 	var pageInfo request.PageInfo
 	err := ctx.ShouldBindJSON(&pageInfo)
@@ -97,6 +98,56 @@ func (s *SysTeachingVideoApi) SearchTeachingVideoList(ctx *gin.Context) {
 	}, "获取成功", ctx)
 }
 
+// SearchAllParentVideoList
+// @Tags SearchAllParentVideoList
+// @router /teachingVideo/getTeachingParentVideoList [post]
+// @Summary 查询所有父视频
 func (s *SysTeachingVideoApi) SearchAllParentVideoList(ctx *gin.Context) {
+	var tempList []sysRes.TeachingVideoInfoResponse
 
+	list, err := sysTeachingVideoService.SearchAllParentVideoList()
+
+	if err != nil {
+		response.FailWithMessage(err.Error(), ctx)
+		return
+	}
+	total := 0
+	// 将list转换成tempList
+	for _, item := range list {
+		tempItem := sysRes.TeachingVideoInfoResponse{
+			ID:           item.ID,
+			VideoName:    item.VideoName,
+			Number:       item.Number,
+			Content:      item.Content,
+			VideoIconUrl: item.VideoIconUrl,
+		}
+		total++
+		tempList = append(tempList, tempItem)
+	}
+	response.OkWithDetailed(sysRes.TeachingVideoInfoListResponse{
+		List:  tempList,
+		Total: total,
+	}, "获取成功", ctx)
+}
+
+// SearchAllSonVideoList
+// @Tags SearchAllSonVideoList
+// @router /teachingVideo/getTeachingSonVideoList [post]
+// @Summary 查询所有子视频
+func (s *SysTeachingVideoApi) SearchAllSonVideoList(ctx *gin.Context) {
+	ParentId, err := strconv.Atoi(ctx.PostForm("ParentId"))
+	if err != nil {
+		response.FailWithMessage(err.Error(), ctx)
+		return
+	}
+	list, total, err := sysTeachingVideoService.SearchAllSonVideoList(ParentId)
+	if err != nil {
+		response.FailWithMessage(err.Error(), ctx)
+		return
+	}
+
+	response.OkWithDetailed(sysRes.TeachingVideoListResponse{
+		List:  list,
+		Total: total,
+	}, "获取成功", ctx)
 }
