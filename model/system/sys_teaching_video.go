@@ -9,6 +9,10 @@ type SysTeachingVideo struct {
 	VideoIconUrl string `json:"videoIcon" gorm:"comment:视频图标地址"`
 	Group        string `json:"group" gorm:"comment:视频分组"`
 	Type         int    `json:"type" gorm:"comment:类型"`
+	Number       int    `json:"number" gorm:"comment:集数"`
+	Episode      int    `json:"episode" gorm:"comment:第几集"`
+	ParentId     uint   `json:"parentId" gorm:"comment:父Id"`
+	Content      string `json:"content" gorm:"comment:内容"`
 }
 
 func (SysTeachingVideo) TableName() string {

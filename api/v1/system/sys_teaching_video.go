@@ -22,6 +22,7 @@ type SysTeachingVideoApi struct{}
 // @router /teachingVideo/upload [post]
 // @Success 200 "新增成功"
 func (s *SysTeachingVideoApi) AddTeachingVideoApi(ctx *gin.Context) {
+	// todo: 修改成批量上传
 	// 注意这里只测试单个视频
 	video, _ := ctx.FormFile("video")
 	videoIcon, _ := ctx.FormFile("videoIcon")
@@ -94,4 +95,8 @@ func (s *SysTeachingVideoApi) SearchTeachingVideoList(ctx *gin.Context) {
 		Page:     pageInfo.Page,
 		PageSize: pageInfo.PageSize,
 	}, "获取成功", ctx)
+}
+
+func (s *SysTeachingVideoApi) SearchAllParentVideoList(ctx *gin.Context) {
+
 }
