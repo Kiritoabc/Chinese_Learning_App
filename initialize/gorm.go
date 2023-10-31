@@ -36,6 +36,7 @@ func RegisterTables() {
 		// 系统模块表
 		system.SysTeachingVideo{},
 		system.SysUser{},
+		system.SysAmusementVodeo{},
 	)
 	if err != nil {
 		global.CLA_LOG.Error("register table failed", zap.Error(err))

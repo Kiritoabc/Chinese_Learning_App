@@ -5,4 +5,5 @@ type RouterGroup struct {
 	InitRouter
 	TeachingVideoRouter
 	UserRouter
+	AmusementVideoRouter
 }

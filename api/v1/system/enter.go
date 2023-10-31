@@ -5,6 +5,7 @@ import "Chinese_Learning_App/service"
 type ApiGroup struct {
 	SysTeachingVideoApi
 	SysUserApi
+	SysAmusementVideoApi
 }
 
 var (

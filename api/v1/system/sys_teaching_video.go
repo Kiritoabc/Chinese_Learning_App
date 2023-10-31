@@ -22,6 +22,7 @@ type SysTeachingVideoApi struct{}
 // @Summary 新增SysTeachingVideo
 // @router /teachingVideo/upload [post]
 // @Success 200 "新增成功"
+// todo: 上传不是重点，暂时不做要求
 func (s *SysTeachingVideoApi) AddTeachingVideoApi(ctx *gin.Context) {
 	// todo: 修改成批量上传
 	// 注意这里只测试单个视频
