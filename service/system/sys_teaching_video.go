@@ -38,7 +38,7 @@ func (t *TeachingVideoService) GetTeachingVideoList(info request.PageInfo) (list
 func (t *TeachingVideoService) SearchAllParentVideoList() (list []system.SysTeachingVideo, err error) {
 	db := global.CLA_DB.Model(&system.SysTeachingVideo{})
 	// 查询所有的第一集的信息
-	err = db.Where("episode = ?", "0").Find(&list).Error
+	err = db.Where("episode = ?", "1").Find(&list).Error
 	return
 }
 

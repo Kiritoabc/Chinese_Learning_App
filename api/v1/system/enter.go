@@ -9,6 +9,7 @@ type ApiGroup struct {
 }
 
 var (
-	sysTeachingVideoService = service.ServiceGroupApp.SystemServiceGroup.TeachingVideoService
-	sysUserService          = service.ServiceGroupApp.SystemServiceGroup.UserService
+	sysTeachingVideoService  = service.ServiceGroupApp.SystemServiceGroup.TeachingVideoService
+	sysUserService           = service.ServiceGroupApp.SystemServiceGroup.UserService
+	sysAmusementVideoService = service.ServiceGroupApp.SystemServiceGroup.AmusementVideoService
 )
