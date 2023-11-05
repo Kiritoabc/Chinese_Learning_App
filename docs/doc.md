@@ -1,82 +1,104 @@
 # 开发文档
 
+## 主要目标
 
-
-功能需求：
-
-- 提供外国网友学习中文的网站 or app
-- 文化交流（尽量以乐趣为主）
-- 注册登录功能
-- 添加/删除视频功能
-- 添加视频分组
-
-
-
-前端界面简单设计
+1. 提供视频学习资源。
+2. 提供字幕翻译功能。
 
 
 
 
 
-数据库设计:Chinese_Learning_DB
+## 视频存储问题
 
-表:teaching_videos(中文教学视频）
-
-字段：
-
-- id(唯一标识)
-- name(视频名称)
-- icon_uri(视频图标)
-- uri(视频的url路径)
-- group:(视频所属分组)
-- type:(类型)
-
-表:cultural_exchange_videos
-
-字段:
-
-- id(唯一标识)
-- name(视频名称)
-- icon(视频图标)
-- uri(视频的url路径)
-- group:(视频所属分组)
-- type:(类型)
-
-
-
-表:video_groups(视频)
-
-- type(类型)
-- 
-
-表:user(用户)
-
-字段：
-
-- id(唯一标识)
-- username(用户名)
-- password(密码)
-
-
-
-表:admins(管理员)
-
-字段:
-
-- id(唯一标识)
-- username(用户名)
-- password(密码)
-- rank(管理员级别)
+- 暂时开发阶将所有文件挡在demo的bucket中
+- 部署的时候考虑修改两类视频位于不同的桶中
 
 
 
 
 
-表:comments(品论)暂无要求
+## 视频翻译功能的调研
 
-字段:
+关于如何添加字幕和对字幕进行翻译的调研
 
-- 
+- whisper：https://github.com/openai/whisper
+- faster-whisper: https://github.com/guillaumekln/faster-whisper
 
 
 
+第三方软件:
+
+暂时没有找到比较好的免费的产品
+
+目前采用openAI开源的whisper：https://github.com/Const-me/Whisper
+
+提取视频字幕效果如下:
+
+**txt文件格式**
+
+**Text with timestamps**
+
+![1699159512738](doc/1699159512738.png)
+
+**Translate**
+
+![1699159539343](doc/1699159539343.png)
+
+
+
+**SRT文件格式**
+
+![1699160720862](doc/1699160720862.png)
+
+
+
+发现再翻译的结果中，对于长视频的支持并不是很好，只翻译到了20分钟左右的样子
+
+中文提取还行 --> 所以可以采用谷歌翻译成英文srt字幕文件再进行插入。 
+
+
+
+将翻译填入视频
+
+- 参考：[如何使用SRT字幕？如何导入字幕到视频中？ - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/85777092)
+
+
+
+
+
+**PR2023或许能行**
+
+- [PR 2023支持一键语音转字幕功能了！剪辑效率瞬间拉满_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1s841157j1/?spm_id_from=333.788.recommend_more_video.1&vd_source=31ce8445f20f6ea89c3ec2139321a62b)
+
+
+
+
+
+
+
+##  测试效果
+
+**ArcTime**
+
+![1699167201977](doc/1699167201977.png)
+
+
+
+
+
+**PR**
+
+暂时并没有时间去做测试
+
+
+
+
+
+
+
+## 进度
+
+目前主要是完成了两类视频的添加和展示功能
+
+关于是否需要用户登录，待定参考
