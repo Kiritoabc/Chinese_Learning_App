@@ -38,7 +38,7 @@ system:
 # mysql connect configuration
 # 未初始化之前请勿手动修改数据库信息！！！如果一定要手动初始化请看（https://gin-vue-admin.com/docs/first_master）
 mysql:
-  path: "127.0.0.1"
+  path: docker_mysql
   port: "3306"
   config: "charset=utf8mb4&parseTime=True&loc=Local"
   db-name: "Chinese_Learning_DB"
@@ -52,9 +52,9 @@ mysql:
 
 # MinIo的配置
 minio:
-  endpoint: localhost:9001           # minio 的url
+  endpoint: my_minio:9001           # minio 的url
   accessKey: minio                              # userName
   secretKey: minio@123456                       # password
-  bucketName: "minio"
+  bucketName: "test"
   region: us-east-1
   useSSL: false
