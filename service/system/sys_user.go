@@ -30,3 +30,14 @@ func (userService *UserService) Register(u system.SysUser) (userInter system.Sys
 }
 
 // Login 用户登录服务
+func (userService UserService) Login(u system.SysUser) (userInter system.SysUser, err error) {
+	// 登录
+	var user system.SysUser
+	// 判断用户是否存在
+	if !errors.Is(global.CLA_DB.Where("username = ?", u.Username).First(&user).Error, gorm.ErrRecordNotFound) {
+		return userInter, errors.New("用户名不存在")
+	}
+	//
+	utils.BcryptCheck(u.Password, userInter.Password)
+	return
+}

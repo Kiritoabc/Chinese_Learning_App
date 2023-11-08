@@ -25,7 +25,6 @@ type SysUserApi struct{}
 // @Router    /user/register [post]
 func (a *SysUserApi) Register(ctx *gin.Context) {
 	// todo: 暂时不考虑使用验证码注册
-
 	var r sysReq.Register
 	// 获取参数
 	err := ctx.ShouldBindJSON(&r)
@@ -44,7 +43,7 @@ func (a *SysUserApi) Register(ctx *gin.Context) {
 		Username:  r.Username,
 		Password:  r.Password,
 		NickName:  r.NickName,
-		HeaderImg: r.HeaderImg,
+		HeaderImg: "https://ts1.cn.mm.bing.net/th/id/R-C.e3506e1ab5441c8c9c43facfba9ff1ab?rik=JKbGTz1jQYhGuA&riu=http%3a%2f%2fwww.gx8899.com%2fuploads%2fallimg%2f2018031109%2fqzfrr5ly3af.jpg&ehk=izdYHSNuzDYZQF2HdyA6xZ3Jgz5lXaj%2faZHquTh2FvU%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1",
 		Enable:    r.Enable,
 		Phone:     r.Phone,
 		Email:     r.Email,
@@ -57,4 +56,29 @@ func (a *SysUserApi) Register(ctx *gin.Context) {
 		return
 	}
 	response.OkWithDetailed(sysRes.SysUserResponse{User: userReturn}, "注册成功", ctx)
+}
+
+func (a *SysUserApi) Login(ctx *gin.Context) {
+	var r sysReq.Register
+	// 获取参数
+	err := ctx.ShouldBindJSON(&r)
+	if err != nil {
+		response.FailWithMessage(err.Error(), ctx)
+		return
+	}
+	// 注册参数赋值
+	user := &system.SysUser{
+		Username: r.Username,
+		Password: r.Password,
+	}
+
+	userReturn, err := sysUserService.Login(*user)
+	if err != nil {
+		global.CLA_LOG.Error("登录失败!", zap.Error(err))
+		response.FailWithDetailed(sysRes.SysUserResponse{
+			User: userReturn,
+		}, "登陆失败", ctx)
+		return
+	}
+	response.OkWithDetailed(sysRes.SysUserResponse{User: userReturn}, "登录成功", ctx)
 }
