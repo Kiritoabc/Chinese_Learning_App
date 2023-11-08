@@ -6,7 +6,6 @@ import (
 	"Chinese_Learning_App/model/system"
 	sysReq "Chinese_Learning_App/model/system/request"
 	sysRes "Chinese_Learning_App/model/system/response"
-	"Chinese_Learning_App/utils"
 
 	"go.uber.org/zap"
 
@@ -32,12 +31,12 @@ func (a *SysUserApi) Register(ctx *gin.Context) {
 		response.FailWithMessage(err.Error(), ctx)
 		return
 	}
-	// 参数的校验
-	err = utils.Verify(r, utils.RegisterVerify)
-	if err != nil {
-		response.FailWithMessage(err.Error(), ctx)
-		return
-	}
+	// 参数的校验 todo: 暂时不验证参数
+	//err = utils.Verify(r, utils.RegisterVerify)
+	//if err != nil {
+	//	response.FailWithMessage(err.Error(), ctx)
+	//	return
+	//}
 	// 注册参数赋值
 	user := &system.SysUser{
 		Username:  r.Username,

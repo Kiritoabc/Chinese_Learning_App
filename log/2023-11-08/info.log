@@ -2,3 +2,7 @@
 [Chinese_Learning_App]2023/11/08 - 10:23:40.158	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:28	register swagger handler
 [Chinese_Learning_App]2023/11/08 - 10:23:40.160	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:51	router register success
 [Chinese_Learning_App]2023/11/08 - 10:23:40.162	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/core/server.go:36	server run success on 	{"address": ":8888"}
+[Chinese_Learning_App]2023/11/08 - 13:46:01.061	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/gorm.go:45	register table success
+[Chinese_Learning_App]2023/11/08 - 13:46:01.062	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:28	register swagger handler
+[Chinese_Learning_App]2023/11/08 - 13:46:01.064	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:51	router register success
+[Chinese_Learning_App]2023/11/08 - 13:46:01.065	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/core/server.go:36	server run success on 	{"address": ":8888"}
