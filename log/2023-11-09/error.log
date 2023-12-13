@@ -1,0 +1,22 @@
+[Chinese_Learning_App]2023/11/09 - 09:27:53.807	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:53	注册失败!	{"error": "Error 1406 (22001): Data too long for column 'header_img' at row 1"}
+[Chinese_Learning_App]2023/11/09 - 09:32:11.239	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户名不存在"}
+[Chinese_Learning_App]2023/11/09 - 09:32:32.505	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户名不存在"}
+[Chinese_Learning_App]2023/11/09 - 09:32:43.618	[31merror[0m	D:/code/go_code/Chinese_Learning_App/initialize/gorm.go:42	register table failed	{"error": "Error 1406 (22001): Data too long for column 'header_img' at row 1"}
+[Chinese_Learning_App]2023/11/09 - 09:33:37.986	[31merror[0m	D:/code/go_code/Chinese_Learning_App/initialize/gorm.go:42	register table failed	{"error": "Error 1406 (22001): Data too long for column 'header_img' at row 1"}
+[Chinese_Learning_App]2023/11/09 - 09:37:29.153	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户名不存在"}
+[Chinese_Learning_App]2023/11/09 - 09:40:06.970	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户名不存在"}
+[Chinese_Learning_App]2023/11/09 - 09:40:41.301	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户名不存在"}
+[Chinese_Learning_App]2023/11/09 - 09:43:27.689	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户名不存在"}
+[Chinese_Learning_App]2023/11/09 - 09:44:07.782	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户名不存在"}
+[Chinese_Learning_App]2023/11/09 - 09:44:20.327	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户密码错误"}
+[Chinese_Learning_App]2023/11/09 - 11:04:00.999	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户密码错误"}
+[Chinese_Learning_App]2023/11/09 - 11:04:04.808	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户密码错误"}
+[Chinese_Learning_App]2023/11/09 - 11:04:05.777	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户密码错误"}
+[Chinese_Learning_App]2023/11/09 - 11:04:05.992	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户密码错误"}
+[Chinese_Learning_App]2023/11/09 - 11:04:06.163	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户密码错误"}
+[Chinese_Learning_App]2023/11/09 - 11:04:06.317	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户密码错误"}
+[Chinese_Learning_App]2023/11/09 - 11:04:06.479	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户密码错误"}
+[Chinese_Learning_App]2023/11/09 - 11:04:06.653	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户密码错误"}
+[Chinese_Learning_App]2023/11/09 - 11:04:06.815	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户密码错误"}
+[Chinese_Learning_App]2023/11/09 - 11:04:10.412	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户密码错误"}
+[Chinese_Learning_App]2023/11/09 - 11:04:23.320	[31merror[0m	D:/code/go_code/Chinese_Learning_App/api/v1/system/sys_user.go:76	登录失败!	{"error": "用户密码错误"}

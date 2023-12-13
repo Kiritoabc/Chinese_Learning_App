@@ -30,9 +30,11 @@ func (s *SysTeachingVideoApi) AddTeachingVideoApi(ctx *gin.Context) {
 	videoIcon, _ := ctx.FormFile("videoIcon")
 	videoName := ctx.PostForm("videoName")
 	group := ctx.PostForm("group")
+	parentId, _ := strconv.Atoi(ctx.PostForm("parentId"))
 	var videoType int
 	videoType, _ = strconv.Atoi(ctx.PostForm("videoType"))
-	teachingVideo := &system.SysTeachingVideo{
+	var teachingVideo = &system.SysTeachingVideo{
+		ParentId:  uint(parentId),
 		VideoName: videoName,
 		Group:     group,
 		Type:      videoType,
