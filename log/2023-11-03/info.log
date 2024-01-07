@@ -1,0 +1,24 @@
+[Chinese_Learning_App]2023/11/03 - 12:36:50.893	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/gorm.go:45	register table success
+[Chinese_Learning_App]2023/11/03 - 12:36:50.895	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:28	register swagger handler
+[Chinese_Learning_App]2023/11/03 - 12:36:50.896	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:51	router register success
+[Chinese_Learning_App]2023/11/03 - 12:36:50.897	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/core/server.go:36	server run success on 	{"address": ":8888"}
+[Chinese_Learning_App]2023/11/03 - 13:42:33.369	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/gorm.go:45	register table success
+[Chinese_Learning_App]2023/11/03 - 13:42:33.371	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:28	register swagger handler
+[Chinese_Learning_App]2023/11/03 - 13:42:33.372	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:51	router register success
+[Chinese_Learning_App]2023/11/03 - 13:42:33.374	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/core/server.go:36	server run success on 	{"address": ":8888"}
+[Chinese_Learning_App]2023/11/03 - 13:44:35.518	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/gorm.go:45	register table success
+[Chinese_Learning_App]2023/11/03 - 13:44:35.519	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:28	register swagger handler
+[Chinese_Learning_App]2023/11/03 - 13:44:35.520	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:51	router register success
+[Chinese_Learning_App]2023/11/03 - 13:44:35.522	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/core/server.go:36	server run success on 	{"address": ":8888"}
+[Chinese_Learning_App]2023/11/03 - 16:10:32.258	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/gorm.go:45	register table success
+[Chinese_Learning_App]2023/11/03 - 16:10:32.261	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:28	register swagger handler
+[Chinese_Learning_App]2023/11/03 - 16:10:32.263	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:51	router register success
+[Chinese_Learning_App]2023/11/03 - 16:10:32.265	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/core/server.go:36	server run success on 	{"address": ":8888"}
+[Chinese_Learning_App]2023/11/03 - 16:22:14.746	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/gorm.go:45	register table success
+[Chinese_Learning_App]2023/11/03 - 16:22:14.747	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:28	register swagger handler
+[Chinese_Learning_App]2023/11/03 - 16:22:14.748	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:51	router register success
+[Chinese_Learning_App]2023/11/03 - 16:22:14.750	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/core/server.go:36	server run success on 	{"address": ":8888"}
+[Chinese_Learning_App]2023/11/03 - 16:52:34.336	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/gorm.go:45	register table success
+[Chinese_Learning_App]2023/11/03 - 16:52:34.338	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:28	register swagger handler
+[Chinese_Learning_App]2023/11/03 - 16:52:34.340	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:51	router register success
+[Chinese_Learning_App]2023/11/03 - 16:52:34.342	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/core/server.go:36	server run success on 	{"address": ":8888"}

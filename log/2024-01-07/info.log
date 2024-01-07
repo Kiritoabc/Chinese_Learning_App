@@ -2,3 +2,14 @@
 [Chinese_Learning_App]2024/01/07 - 10:53:40.251	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:28	register swagger handler
 [Chinese_Learning_App]2024/01/07 - 10:53:40.252	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:51	router register success
 [Chinese_Learning_App]2024/01/07 - 10:53:40.259	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/core/server.go:36	server run success on 	{"address": ":8888"}
+[Chinese_Learning_App]2024/01/07 - 11:02:03.049	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/gorm.go:45	register table success
+[Chinese_Learning_App]2024/01/07 - 11:02:03.051	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:28	register swagger handler
+[Chinese_Learning_App]2024/01/07 - 11:02:03.053	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:51	router register success
+[Chinese_Learning_App]2024/01/07 - 11:02:03.067	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/core/server.go:36	server run success on 	{"address": ":8888"}
+[Chinese_Learning_App]2024/01/07 - 19:22:18.457	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:28	register swagger handler
+[Chinese_Learning_App]2024/01/07 - 19:22:18.460	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:51	router register success
+[Chinese_Learning_App]2024/01/07 - 19:22:18.463	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/core/server.go:36	server run success on 	{"address": ":8888"}
+[Chinese_Learning_App]2024/01/07 - 19:31:41.188	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/gorm.go:45	register table success
+[Chinese_Learning_App]2024/01/07 - 19:31:41.195	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:28	register swagger handler
+[Chinese_Learning_App]2024/01/07 - 19:31:41.201	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/initialize/router.go:51	router register success
+[Chinese_Learning_App]2024/01/07 - 19:31:41.214	[34minfo[0m	D:/code/go_code/Chinese_Learning_App/core/server.go:36	server run success on 	{"address": ":8888"}

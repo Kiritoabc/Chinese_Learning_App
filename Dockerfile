@@ -21,3 +21,6 @@ COPY --from=0 /App/config.docker.yaml ./
 
 EXPOSE 8888
 ENTRYPOINT ./server -c config.docker.yaml
+#docker build -t chinese_learning_app .
+
+# docker run  -d --name chinese_learning_app --network bridge --link docker_mysql:docker_mysql --link my_minio:my_minio -p 8888:8888 chinese_learning_app
