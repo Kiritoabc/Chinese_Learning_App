@@ -1,0 +1,50 @@
+version: '3'
+services:
+  docker_mysql:
+    image: mysql:8
+    container_name: docker_mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - bridge_network
+    volumes:
+      - D:\docker\data\mysql1:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    restart: unless-stopped
+
+  my_minio:
+    image: minio/minio
+    container_name: my_minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    networks:
+      - bridge_network
+    volumes:
+      - D:\docker\data\minio1\data:/data
+      - D:\docker\data\minio1\config:/root/.minio
+    environment:
+      - MINIO_ROOT_USER=minio
+      - MINIO_ROOT_PASSWORD=minio@123456
+    command: server /data --console-address ":9000" --address ":9001"
+    restart: unless-stopped
+
+  chinese_learning_app:
+    image: chinese_learning_app
+    container_name: chinese_learning_app
+    depends_on:
+      - docker_mysql
+      - my_minio
+    networks:
+      - bridge_network
+    ports:
+      - "8888:8888"
+    links:
+      - docker_mysql:docker_mysql
+      - my_minio:my_minio
+    restart: unless-stopped
+
+networks:
+  bridge_network:
+    driver: bridge
